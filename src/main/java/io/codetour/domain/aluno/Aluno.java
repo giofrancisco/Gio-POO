@@ -9,13 +9,17 @@ import javax.persistence.Id;
 public class Aluno {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
 	private String nome;
 	private String sobrenome;
-	
-	public Aluno() { }
+	private String endereço;
+	private String telefone;
+	private String email;
+
+	public Aluno() {
+	}
 
 	public Long getId() {
 		return id;
@@ -40,4 +44,29 @@ public class Aluno {
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
+
+	public String getEndereço() {
+		return endereço;
+	}
+
+	public void setEndereço(String endereço) {
+		this.endereço = endereço;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 }

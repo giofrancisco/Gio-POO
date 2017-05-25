@@ -17,27 +17,30 @@ import javax.validation.constraints.NotNull;
 public class Disciplina {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="disciplina_sequence")
-	@SequenceGenerator(name="disciplina_sequence", allocationSize=1, sequenceName="disciplina_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "disciplina_sequence")
+	@SequenceGenerator(name = "disciplina_sequence", allocationSize = 1, sequenceName = "disciplina_sequence")
 	private Long id;
 	@NotNull
 	private String nome;
 	private String descricao;
-	@Column(name="carge_horaria")
+	@Column(name = "carge_horaria")
 	@NotNull
 	private int cargaHoraria;
 	@ManyToOne
-    @JoinColumn(name="curso_id")
+	@JoinColumn(name = "curso_id")
 	@NotNull
 	private Curso curso;
 	@ManyToOne
 	@NotNull
-	@JoinColumn(name="semestre_id")
+	@JoinColumn(name = "semestre_id")
 	private Semestre semestre;
 	@OneToMany
 	private Collection<Disciplina> dependencias;
-	
-	Disciplina() { }
+	private String ementa;
+	private String bibliografia;
+
+	Disciplina() {
+	}
 
 	public Long getId() {
 		return id;
@@ -94,4 +97,21 @@ public class Disciplina {
 	public void setDependencias(Collection<Disciplina> dependencias) {
 		this.dependencias = dependencias;
 	}
+
+	public String getEmenta() {
+		return ementa;
+	}
+
+	public void setEmenta(String ementa) {
+		this.ementa = ementa;
+	}
+
+	public String getBibliografia() {
+		return bibliografia;
+	}
+
+	public void setBibliografia(String bibliografia) {
+		this.bibliografia = bibliografia;
+	}
+
 }

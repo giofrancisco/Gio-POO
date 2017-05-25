@@ -8,7 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+
+import io.codetour.domain.professor.Professor;
+
+
 
 @Entity
 public class Curso {
@@ -21,6 +26,8 @@ public class Curso {
 	private String descricao;
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Disciplina> disciplinas;
+	@OneToOne
+	private Professor coordenador;
 	
 	public Curso() { }
 
@@ -47,4 +54,22 @@ public class Curso {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+
+	public Professor getCoordenador() {
+		return coordenador;
+	}
+
+	public void setCoordenador(Professor coordenador) {
+		this.coordenador = coordenador;
+	}
+	
+	
 }
