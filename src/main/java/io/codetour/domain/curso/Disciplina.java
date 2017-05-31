@@ -10,15 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
 
 @Entity
 public class Disciplina {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "disciplina_sequence")
-	@SequenceGenerator(name = "disciplina_sequence", allocationSize = 1, sequenceName = "disciplina_sequence")
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	@NotNull
 	private String nome;
@@ -39,8 +37,7 @@ public class Disciplina {
 	private String ementa;
 	private String bibliografia;
 
-	Disciplina() {
-	}
+	Disciplina() {}
 
 	public Long getId() {
 		return id;

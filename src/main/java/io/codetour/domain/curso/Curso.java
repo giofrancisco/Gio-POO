@@ -29,7 +29,7 @@ public class Curso {
 	@OneToOne
 	private Professor coordenador;
 	
-	public Curso() { }
+	public Curso() {}
 
 	public Long getId() {
 		return id;

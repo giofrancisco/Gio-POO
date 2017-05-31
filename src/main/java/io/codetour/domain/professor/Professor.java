@@ -1,4 +1,4 @@
-package io.codetour.domain.aluno;
+package io.codetour.domain.professor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,19 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Aluno {
+public class Professor {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-
 	private String nome;
 	private String sobrenome;
-	private String endereço;
+	private String endereco;
 	private String telefone;
 	private String email;
+	private String titulacaoMaxima;
 
-	public Aluno() {}
+	public Professor() {}
 
 	public Long getId() {
 		return id;
@@ -44,12 +44,12 @@ public class Aluno {
 		this.sobrenome = sobrenome;
 	}
 
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public String getTelefone() {
@@ -67,5 +67,14 @@ public class Aluno {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	public String getTitulacaoMaxima() {
+		return titulacaoMaxima;
+	}
+
+	public void setTitulacaoMaxima(String titulacaoMaxima) {
+		this.titulacaoMaxima = titulacaoMaxima;
+	}
+
 
 }

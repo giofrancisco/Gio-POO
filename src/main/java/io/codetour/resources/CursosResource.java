@@ -13,10 +13,10 @@ import io.codetour.domain.curso.CursoRepository;
 
 @RestController
 @RequestMapping("/curso")
-public class CursoResource {
+public class CursosResource {
 
 	private CursoRepository cursoRepository;
-	public CursoResource(CursoRepository cursoRepository) {
+	public CursosResource(CursoRepository cursoRepository) {
 		this.cursoRepository = cursoRepository;
 	}
 	
