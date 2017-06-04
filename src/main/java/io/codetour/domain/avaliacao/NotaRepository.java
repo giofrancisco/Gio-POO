@@ -1,5 +1,7 @@
 package io.codetour.domain.avaliacao;
 
-public interface NotaRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface NotaRepository extends CrudRepository<Nota, Long> {
 
 }

@@ -1,5 +1,7 @@
 package io.codetour.domain.avaliacao;
 
-public interface FrequenciaRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface FrequenciaRepository extends CrudRepository<Frequencia, Long> {
 
 }

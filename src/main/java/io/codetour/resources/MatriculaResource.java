@@ -32,4 +32,5 @@ public class MatriculaResource {
 		return matriculaService.fazerMatricula(matricula);
 	}
 	
+		
 }

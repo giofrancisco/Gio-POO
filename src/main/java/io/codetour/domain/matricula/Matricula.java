@@ -13,10 +13,10 @@ import io.codetour.domain.curso.Disciplina;
 
 @Entity
 public class Matricula {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="matricula_sequence")
-	@SequenceGenerator(name="matricula_sequence", sequenceName="matricula_sequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "matricula_sequence")
+	@SequenceGenerator(name = "matricula_sequence", sequenceName = "matricula_sequence")
 	private Long id;
 	@ManyToOne
 	@NotNull
@@ -24,8 +24,9 @@ public class Matricula {
 	@ManyToOne
 	@NotNull
 	private Disciplina disciplina;
-	
-	Matricula() { }
+
+	Matricula() {
+	}
 
 	public Long getId() {
 		return id;
@@ -50,4 +51,5 @@ public class Matricula {
 	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
 	}
+
 }

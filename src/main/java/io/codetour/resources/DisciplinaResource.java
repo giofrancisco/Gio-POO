@@ -17,28 +17,46 @@ public class DisciplinaResource {
 
 	private DisciplinaRepository disciplinaRepository;
 
-	public DisciplinaResource(DisciplinaRepository disciplinaRepository){
+	public DisciplinaResource(DisciplinaRepository disciplinaRepository) {
 		this.disciplinaRepository = disciplinaRepository;
 	}
-	
+
 	@GetMapping
 	public Iterable<Disciplina> getAllDisciplinas() {
 		return disciplinaRepository.findAll();
 	}
-	
-	@GetMapping(value="/{id}")
+
+	@GetMapping(value = "/{id}")
 	public Disciplina getDisciplina(@PathVariable Long id) {
 		return disciplinaRepository.findOne(id);
 	}
-	
+
 	@PostMapping
 	public Disciplina createDisciplina(@RequestBody Disciplina disciplina) {
 		return disciplinaRepository.save(disciplina);
 	}
+
+	@PostMapping(value = "/{destrancar}/{id}")
+	public boolean unlock(@PathVariable Long id) {
+		lockUnlock(id, true);
+		return true;
+	}
 	
-	@DeleteMapping(value="/{id}")
+	@PostMapping(value = "/{trancar}/{id}")
+	public boolean lock(@PathVariable Long id) {
+		lockUnlock(id, false);
+		return true;
+	}
+	
+	private void lockUnlock (Long id, Boolean status){
+		Disciplina disciplina = disciplinaRepository.findOne(id);
+		disciplina.setStatus(status);
+		disciplinaRepository.save(disciplina);
+	}//jogar esse metodo em uma classe de disciplina service
+
+	@DeleteMapping(value = "/{id}")
 	public void removeDisciplina(@PathVariable Long id) {
 		disciplinaRepository.delete(id);
 	}
-	
+
 }

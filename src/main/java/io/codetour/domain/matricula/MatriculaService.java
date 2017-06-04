@@ -31,10 +31,8 @@ public class MatriculaService {
 		} else {
 			return false;
 		}
-	}
-	
+	}	
 	private boolean atendeDependencias(Collection<Disciplina> disciplinas) {
 		return !historicoRepository.findByDisciplinaInAndAprovadoTrue(disciplinas).isEmpty();
-	}
-	
+	}	
 }

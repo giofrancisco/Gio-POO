@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class Disciplina {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@NotNull
 	private String nome;
@@ -36,8 +36,10 @@ public class Disciplina {
 	private Collection<Disciplina> dependencias;
 	private String ementa;
 	private String bibliografia;
+	private Boolean status;
 
-	Disciplina() {}
+	Disciplina() {
+	}
 
 	public Long getId() {
 		return id;
@@ -109,6 +111,14 @@ public class Disciplina {
 
 	public void setBibliografia(String bibliografia) {
 		this.bibliografia = bibliografia;
+	}
+
+	public Boolean getStatus() {
+		return status;
+	}
+
+	public void setStatus(Boolean status) {
+		this.status = status;
 	}
 
 }
