@@ -11,13 +11,17 @@ import org.springframework.web.bind.annotation.RestController;
 import io.codetour.domain.curso.Curso;
 import io.codetour.domain.curso.CursoRepository;
 
+
 @RestController
 @RequestMapping("/curso")
 public class CursosResource {
 
 	private CursoRepository cursoRepository;
+	
+	
 	public CursosResource(CursoRepository cursoRepository) {
 		this.cursoRepository = cursoRepository;
+		
 	}
 	
 	@GetMapping

@@ -52,7 +52,7 @@ public class DisciplinaResource {
 		Disciplina disciplina = disciplinaRepository.findOne(id);
 		disciplina.setStatus(status);
 		disciplinaRepository.save(disciplina);
-	}//jogar esse metodo em uma classe de disciplina service
+	}
 
 	@DeleteMapping(value = "/{id}")
 	public void removeDisciplina(@PathVariable Long id) {

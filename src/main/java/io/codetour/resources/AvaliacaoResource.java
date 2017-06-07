@@ -27,5 +27,7 @@ public class AvaliacaoResource {
 	public Iterable<Avaliacao> getAllAvaliacoes() {
 		return avaliacaoRepository.findAll();
 	}
+	
+	
 
 }
